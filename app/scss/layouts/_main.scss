@@ -10,10 +10,19 @@
     align-items: center;
     justify-content: space-between;
     height: 10vh;
+
+    @include u.breakpoints("large") {
+      height: 8vh;
+      width: 95%;
+    }
   }
 
   &__logo {
     width: u.rem(120);
+
+    @include u.breakpoints(small) {
+      width: u.rem(80);
+    }
   }
 
   &__nav {
@@ -23,6 +32,10 @@
       font-weight: 500;
       margin: 0;
       gap: u.rem(40);
+
+      @include u.breakpoints(small) {
+        display: none;
+      }
     }
 
     &-item {
@@ -30,13 +43,76 @@
       cursor: pointer;
     }
   }
+
+  &__bar {
+    display: none;
+
+    @include u.breakpoints(small) {
+      display: block;
+    }
+  }
+
+  &__mobile-menu {
+    background-color: var(--background-color-2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    padding: u.rem(20);
+    transform: translateX(500px);
+    transition: all 300ms ease;
+    display: none;
+
+    @include u.breakpoints(small) {
+      display: block;
+    }
+
+    &-close {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+    }
+
+    &-list {
+      margin: u.rem(30) 0;
+      padding: 0;
+    }
+
+    &-item {
+      font-size: u.rem(20);
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      margin: u.rem(20) 0;
+    }
+  }
+
+  &__mobile-menu.active {
+    transform: translateX(0)
+  }
 }
 
 .hero {
   display: flex;
-  height: 85vh;
+  flex-direction: row;
+  // height: 85vh;
   width: 90%;
   margin-inline: auto;
+
+  @include u.breakpoints(large) {
+    width: 95%;
+    // height: 65vh;
+  }
+
+  @include u.breakpoints(small) {
+    // min-height: 100vh;
+    flex-direction: column;
+    padding: u.rem(30) 0;
+  }
 
   &__content {
     flex-basis: 50%;
@@ -44,6 +120,10 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
+
+    @include u.breakpoints(small) {
+      align-items: center;
+    }
   }
 
   &__subtitle {
@@ -54,26 +134,54 @@
       height: u.rem(2);
       width: u.rem(80);
       background-color: var(--text-color);
+
+      @include u.breakpoints(small) {
+        display: none;
+      }
     }
 
     &-text {
       margin-left: u.rem(12);
       font-size: u.rem(16);
+
+      @include u.breakpoints(small) {
+        font-size: u.rem(14);
+      }
     }
   }
 
   &__text {
     margin: u.rem(30) 0;
+
+    @include u.breakpoints(large) {
+      margin: u.rem(25) 0;
+    }
+
+    @include u.breakpoints(small) {
+      margin: u.rem(15) 0;
+      text-align: center;
+    }
   }
 
   &__heading {
     font-size: u.rem(70);
     line-height: 1.2;
+
+    @include u.breakpoints(large) {
+      font-size: u.rem(55);
+    }
+    @include u.breakpoints(small) {
+      font-size: u.rem(40);
+    }
   }
 
   &__description {
     color: #3a3a3a;
     font-size: u.rem(20);
+
+    @include u.breakpoints(small) {
+      font-size: u.rem(18);
+    }
   }
 
   &__button {
@@ -101,8 +209,16 @@
   }
 
   &__image {
-    width: u.rem(400);
+    width: u.rem(450);
     z-index: 100;
+
+    @include u.breakpoints(large) {
+      width: u.rem(400);
+    }
+
+    @include u.breakpoints(small) {
+      width: u.rem(320);
+    }
   }
 
   &__image-rad {
@@ -116,11 +232,22 @@
     justify-content: center;
     align-items: center;
 
+    @include u.breakpoints(large) {
+      width: u.rem(300);
+      height: u.rem(300);
+      top: 25%;
+    }
+
     &-inner {
       background-color: var(--background-color-2);
       border-radius: 50%;
       width: u.rem(280);
       height: u.rem(280);
+
+      @include u.breakpoints(large) {
+        width: u.rem(230);
+        height: u.rem(230);
+      }
     }
   }
 }
