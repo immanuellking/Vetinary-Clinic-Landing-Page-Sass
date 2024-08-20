@@ -1,0 +1,109 @@
+@use "../util" as u;
+
+.services {
+  background-color: #e9f4ff;
+  padding: u.rem(80) 0;
+
+  @include u.breakpoints(large) {
+    padding: u.rem(50) 0;
+  }
+
+  @include u.breakpoints(small) {
+    padding: u.rem(30) 0;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: u.rem(120);
+
+    @include u.breakpoints(large) {
+      margin-bottom: u.rem(80);
+    }
+
+    @include u.breakpoints(small) {
+      width: 95%;
+      margin-inline: auto;
+      margin-bottom: u.rem(60);
+    }
+
+    &-title {
+      font-size: u.rem(40);
+      margin: 0;
+
+      @include u.breakpoints(small) {
+        font-size: u.rem(32);
+      }
+    }
+    &-subtitle {
+      font-size: u.rem(20);
+      color: var(--text-color);
+
+      @include u.breakpoints(small) {
+        font-size: u.rem(16);
+      }
+    }
+  }
+
+  &__content {
+    width: 90%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: u.rem(80);
+    row-gap: u.rem(60);
+
+    @include u.breakpoints(large) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: u.rem(60);
+      row-gap: u.rem(40);
+    }
+
+    @include u.breakpoints(small) {
+      grid-template-columns: 1fr;
+      column-gap: u.rem(0);
+      row-gap: u.rem(40);
+    }
+  }
+
+  &__item {
+    background-color: #fff;
+    padding: u.rem(30);
+    border-radius: u.rem(50);
+
+    @include u.breakpoints(small) {
+      padding: u.rem(25);
+    }
+
+    @include u.breakpoints(extra-small) {
+      border-radius: u.rem(30);
+    }
+
+    &-title {
+      font-size: u.rem(20);
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+    }
+    &-description {
+      font-size: u.rem(14);
+      font-weight: 400;
+      color: #3a3a3a;
+    }
+  }
+
+  &__icon {
+    background-color: #e9f4ff;
+    height: u.rem(70);
+    width: u.rem(70);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: u.rem(120);
+
+    @include u.breakpoints(small) {
+      margin-bottom: u.rem(80);
+    }
+  }
+}
