@@ -17,3 +17,19 @@ body {
   font-family: u.$font;
   color: var(--text-color);
 }
+
+.button {
+  font-size: u.rem(18);
+  font-weight: 500;
+  background-color: var(--secondary-color);
+  padding: u.rem(15) u.rem(40);
+  border: none;
+  color: #fff;
+  border-radius: u.rem(10);
+  transition: all 300ms ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
