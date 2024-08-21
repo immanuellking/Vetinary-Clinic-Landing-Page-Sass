@@ -1,0 +1,137 @@
+@use "../util" as u;
+
+.testimonials {
+  &__header {
+    padding: u.rem(80) 0 u.rem(60);
+    text-align: center;
+    background-color: #e9f4ff;
+
+    @include u.breakpoints(large) {
+      padding: u.rem(60) 0 u.rem(40);
+    }
+
+    @include u.breakpoints(small) {
+      padding: u.rem(30) 0;
+    }
+
+    &-title {
+      font-size: u.rem(40);
+      margin: 0;
+
+      @include u.breakpoints(small) {
+        font-size: u.rem(32);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    width: 90%;
+    margin-inline: auto;
+
+    @include u.breakpoints(small) {
+      width: 100%;
+      overflow: auto;
+      scroll-snap-type: x mandatory;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: u.rem(60);
+    border-right: 2px solid #e9f4ff;
+
+    @include u.breakpoints(large) {
+      padding: u.rem(40);
+    }
+
+    @include u.breakpoints(small) {
+      min-width: 100vw;
+      padding: u.rem(25);
+      scroll-snap-align: start;
+    }
+  }
+
+  &__item:last-child {
+    border: none;
+  }
+
+  &__quote {
+    margin: u.rem(60) 0;
+
+    @include u.breakpoints(large) {
+      margin: u.rem(40) 0;
+    }
+
+    @include u.breakpoints(small) {
+      margin: u.rem(25) 0;
+    }
+  }
+
+  &__quote svg {
+    @include u.breakpoints(large) {
+      width: u.rem(100);
+    }
+
+    @include u.breakpoints(small) {
+      width: u.rem(70);
+    }
+  }
+
+  &__feedback {
+    margin-bottom: u.rem(80);
+
+    @include u.breakpoints(small) {
+      margin-bottom: u.rem(50);
+    }
+  }
+
+  &__title {
+    font-size: u.rem(24);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__text {
+    font-size: u.rem(18);
+    text-align: center;
+
+    @include u.breakpoints(small) {
+      font-size: u.rem(16);
+    }
+  }
+
+  &__reviewer {
+    &-info {
+      display: flex;
+      align-items: center;
+    }
+
+    &-image {
+      width: u.rem(40);
+      height: u.rem(40);
+    }
+
+    &-name {
+      margin-left: u.rem(20);
+      font-size: u.rem(18);
+      font-weight: 600;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+
+    &-score {
+      font-size: u.rem(14);
+      font-weight: 500;
+      margin-left: u.rem(8);
+    }
+  }
+
+  &__stars svg {
+    width: u.rem(20);
+  }
+}
