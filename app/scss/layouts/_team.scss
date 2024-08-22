@@ -1,0 +1,126 @@
+@use "../util" as u;
+
+.team {
+  background-color: var(--background-color-2);
+  padding: u.rem(80) 0;
+
+  @include u.breakpoints(large) {
+    padding: u.rem(50) 0;
+  }
+
+  @include u.breakpoints(small) {
+    padding: u.rem(30) 0;
+  }
+
+  &__header {
+    text-align: center;
+    width: 80%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include u.breakpoints(large) {
+      width: 90%;
+    }
+    @include u.breakpoints(small) {
+      width: 95%;
+    }
+  }
+
+  &__title {
+    font-size: u.rem(40);
+    margin: 0;
+
+    @include u.breakpoints(small) {
+      font-size: u.rem(32);
+      word-wrap: none;
+      text-align: left;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+
+    @include u.breakpoints(small) {
+      //   align-items: end;
+    }
+
+    &-text {
+      font-size: u.rem(18);
+      font-weight: 700;
+      color: var(--secondary-color);
+      white-space: nowrap;
+      margin: 0;
+
+      @include u.breakpoints(small) {
+        font-size: u.rem(18);
+      }
+    }
+
+    &-icon {
+      margin: 0;
+      padding: 0;
+    }
+
+    &-icon svg {
+      @include u.breakpoints(small) {
+        width: u.rem(25);
+      }
+    }
+  }
+
+  &__list {
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    gap: u.rem(60);
+    margin-top: u.rem(50);
+
+    @include u.breakpoints(large) {
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    @include u.breakpoints(small) {
+      flex-direction: column;
+      gap: u.rem(20);
+    }
+  }
+
+  &__image {
+    width: u.rem(280);
+
+    @include u.breakpoints(large) {
+      width: u.rem(250);
+    }
+
+    @include u.breakpoints(small) {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    margin: u.rem(20) 0 0;
+
+    @include u.breakpoints(large) {
+      margin: u.rem(15) 0;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    font-size: u.rem(24);
+
+    @include u.breakpoints(large) {
+      font-size: u.rem(22);
+    }
+  }
+
+  &__role {
+    margin: u.rem(5) 0 0;
+    font-size: u.rem(16);
+  }
+}
