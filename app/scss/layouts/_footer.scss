@@ -1,0 +1,127 @@
+@use "../util" as u;
+
+.footer {
+  padding: u.rem(120) 0 u.rem(60);
+  background-color: var(--background-color-2);
+
+  @include u.breakpoints(large) {
+    padding: u.rem(80) 0 u.rem(40);
+  }
+
+  &__container {
+    width: 80%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+
+    @include u.breakpoints(large) {
+      width: 90%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      row-gap: u.rem(20);
+      //   background: aqua;
+    }
+
+    @include u.breakpoints(small) {
+      width: 95%;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: u.rem(40);
+      //   background: aqua;
+    }
+  }
+
+  &__logo {
+    @include u.breakpoints(small) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__links {
+    width: u.rem(220);
+
+    @include u.breakpoints(large) {
+      width: u.rem(180);
+    }
+    @include u.breakpoints(small) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: u.rem(18);
+    margin: 0;
+  }
+
+  &__list {
+    margin: 0;
+    margin-top: u.rem(30);
+    padding: 0;
+
+    @include u.breakpoints(small) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-item {
+      width: fit-content;
+      margin: 0;
+      margin-bottom: u.rem(15);
+      padding: 0;
+      cursor: pointer;
+    }
+    &-item:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social {
+    width: 80%;
+    margin-inline: auto;
+    margin-top: u.rem(80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include u.breakpoints(small) {
+      width: 100%;
+    }
+
+    &-icons {
+      display: flex;
+      justify-content: center;
+      gap: u.rem(30);
+      padding: 0 0 u.rem(15);
+    }
+
+    &-icon {
+      height: u.rem(40);
+      width: u.rem(40);
+      background: #000;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-icon svg {
+      width: u.rem(20);
+    }
+
+    &-copy {
+      text-align: center;
+      padding: u.rem(15) 0 0;
+      border-top: 1px solid;
+      width: fit-content;
+    }
+    &-copy p {
+      margin: 0;
+      font-size: u.rem(14);
+      padding: 0;
+    }
+  }
+}
